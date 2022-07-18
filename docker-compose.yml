@@ -1,0 +1,12 @@
+version: '3'
+services:
+  openvas:
+      restart: always
+      image: mikesplain/openvas
+      hostname: openvas
+      ports:
+        - "8443:443"
+      volumes:
+        - "./data/openvas:/var/lib/openvas/mgr/"
+      environment:
+        - OV_PASSWORD
